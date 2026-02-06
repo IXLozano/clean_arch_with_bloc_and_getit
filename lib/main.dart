@@ -1,6 +1,6 @@
+import 'package:clean_architecture_example/core/di/injection_container.dart' as di;
+import 'package:clean_architecture_example/core/routes/router.dart';
 import 'package:clean_architecture_example/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:clean_architecture_example/injection_container.dart' as di;
-import 'package:clean_architecture_example/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

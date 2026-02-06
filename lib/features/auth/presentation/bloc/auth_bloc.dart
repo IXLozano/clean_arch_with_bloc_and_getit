@@ -59,8 +59,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(AuthLoading());
 
     final result = await checkAuthUseCase(NoParams());
-    result.fold(
-      (failure) => emit(AuthUnauthenticated()), //
+    await result.fold(
+      (failure) async {
+        emit(AuthUnauthenticated());
+      },
       (isAuthenticated) async {
         if (isAuthenticated) {
           final userResult = await getCurrentUserUseCase(NoParams());
